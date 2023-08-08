@@ -1,0 +1,15 @@
+foreach (var client in jsonData.data) {
+  var clientObj = new GameObject("Client " + client.id);
+  clientObj.transform.SetParent(clientsList.transform, false);
+  var nameText = clientObj.AddComponent<Text>();
+  nameText.text = client.name;
+  var pointsText = clientObj.AddComponent<Text>();
+  pointsText.text = client.points;
+  var button = clientObj.AddComponent<Button>();
+  button.onClick.AddListener(() => {
+    var popup = GameObject.Instantiate(popupPrefab, Vector3.zero, Quaternion.identity);
+    popup.transform.SetParent(clientObj.transform, false);
+    var nameText = popup.transform.Find("Name").GetComponent<Text>();
+    nameText.text = client.name;
+    var pointsText = popup.transform.Find("Points").GetComponent<Text>();
+    pointsText.text = client
