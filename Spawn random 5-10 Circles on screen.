@@ -1,0 +1,35 @@
+using UnityEngine;
+using UnityEngine.UI;
+public class LineScript : MonoBehaviour
+{
+    public LineRenderer lineRenderer;
+    private Vector3 startPoint;
+    private Vector3 endPoint;
+    private void Start()
+    {
+        startPoint = transform.position;
+    }
+    private void Update()
+    {
+        endPoint = Input.mousePosition;
+        lineRenderer.SetPosition(0, startPoint);
+        lineRenderer.SetPosition(1, endPoint);
+    }
+    private void OnMouseDown()
+    {
+        startPoint = Input.mousePosition;
+    }
+    private void OnMouseUp()
+    {
+        endPoint = Input.mousePosition;
+        // Check if the line crosses any circles.
+        for (int i = 0; i < circles.Length; i++)
+        {
+            if (lineRenderer.Intersects(circles[i].transform.position, circles[i].transform.size))
+            {
+                // Delete the circle.
+                circles[i].gameObject.SetActive(false);
+            }
+        }
+    }
+}
