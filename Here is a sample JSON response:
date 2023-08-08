@@ -1,0 +1,32 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "points": "1000",
+      "address": "123 Main St, Anytown USA",
+      "is_manager": true
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "points": "2000",
+      "address": "456 Elm St, Anytown USA",
+      "is_manager": false
+    },
+    {
+      "id": "3",
+      "name": "Bob Johnson",
+      "points": "3000",
+      "address": "789 Oak St, Anytown USA",
+      "is_manager": true
+    },
+    {
+      "id": "4",
+      "name": "Samantha Lee",
+      "points": "4000",
+      "address": "1011 Pine St, Anytown USA",
+      "is_manager": false
+    }
+  ]
+}
